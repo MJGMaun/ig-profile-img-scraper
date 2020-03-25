@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const cors = require('cors')({ origin: true});
 const puppeteer = require('puppeteer');
+require('dotenv').config()
 
 const scrapeImages = async (username) => {
     const browser = await puppeteer.launch( { headless: true });
@@ -9,8 +10,8 @@ const scrapeImages = async (username) => {
     await page.goto('https://www.instagram.com/accounts/login/');
     // Login form
     await page.screenshot({path: 'images/1.png'});
-    await page.type('[name=username]', 'username');
-    await page.type('[name=password]', '$$some-password$$');
+    await page.type('[name=username]', process.env.uname);
+    await page.type('[name=password]', process.env.password);
     await page.screenshot({path: 'images/2.png'});
     await page.click('[type=submit]');
 
