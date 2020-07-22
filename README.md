@@ -15,4 +15,4 @@ This IG Profile Image Scraper app is based on: **[Modern Web Scraping Guide](htt
 
 
 
-**Iniimprove kopa to bessy**
+**Note: Iniimprove kopa to bessy..**
